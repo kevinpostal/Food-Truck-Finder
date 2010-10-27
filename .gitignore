@@ -1,3 +1,4 @@
+file_git_rm.sh
 *.pyc
 *.swap
 pip-log.txt
