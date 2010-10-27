@@ -1,23 +1,12 @@
-# Django settings for foodtruck project.
+from settings_local import *
+import os
+import django
 
-DEBUG = True
-TEMPLATE_DEBUG = DEBUG
+# calculated paths for django and the site
+# used as starting points for various other paths
+DJANGO_ROOT = os.path.dirname(os.path.realpath(django.__file__))
 
-ADMINS = (
-    # ('Your Name', 'your_email@domain.com'),
-)
-
-MANAGERS = ADMINS
-
-DATABASES = {
-    'default': {
-        'ENGINE': 'postgresql_psycopg2', # Add 'postgresql_psycopg2', 'postgresql', 'mysql', 'sqlite3' or 'oracle'.
-        'NAME': 'foodtruck',                      # Or path to database file if using sqlite3.
-        'USER': 'foodtruck',                      # Not used with sqlite3.
-        'PASSWORD': 'f34j8h#gh23jq01!',                  # Not used with sqlite3.
-        'HOST': '',                      # Set to empty string for localhost. Not used with sqlite3.
-        'PORT': '',                      # Set to empty string for default. Not used with sqlite3.   
-}}
+PROJECT_PATH = os.path.dirname(os.path.abspath(__file__))
 
 # Local time zone for this installation. Choices can be found here:
 # http://en.wikipedia.org/wiki/List_of_tz_zones_by_name
@@ -88,7 +77,6 @@ INSTALLED_APPS = (
     'django.contrib.sessions',
     'django.contrib.sites',
     'django.contrib.messages',
+    'django.contrib.admin',
     'truckscout',
-# Uncomment the next line to enable the admin:
-    # 'django.contrib.admin',
 )
